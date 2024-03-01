@@ -142,14 +142,13 @@ export function ErrorBoundary() {
   const error = useRouteError();
 
   return (
-    <html lang="en" className={'h-full w-full'}>
+    <html lang="en" style={{ height: '100%', width: '100%' }}>
       <head>
         <title>Error</title>
         <Meta />
         <Links />
-        <script src="https://cdn.tailwindcss.com"></script>
       </head>
-      <body className={'h-full w-full'}>
+      <body style={{ height: '100%', width: '100%', margin: 0 }}>
         <ErrorPage
           message={
             isRouteErrorResponse(error)

@@ -1,5 +1,3 @@
-import { Link } from '@remix-run/react';
-
 import { TemplateLogo } from './TemplateLogo';
 
 export function ErrorPage({
@@ -7,28 +5,71 @@ export function ErrorPage({
 }: {
   message: string;
 }) {
+  function reloadApp() {
+    window.location.href = '/';
+  }
+
   return (
-    <section className={`h-full bg-[#F5C742] text-center text-black`}>
-      <header className={'align-center grid justify-center p-4'}>
-        <TemplateLogo height={200} width={200} />
-      </header>
+    <>
+      <style>{`
+.error-wrap {
+  background-color: #F5C742;
+  color: black;
+  font-family: sans-serif;
+  height: 100%;
+  text-align: center;
+}
+.error-wrap header {
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  padding: 1rem;
+}
+.error-wrap h1 {
+  font-family: monospace;
+  font-size: 3.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.error-wrap p {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+.error-wrap a {
+  color: black;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+.error-wrap a:hover {
+  text-underline-offset: 0.3rem;
+}
+.error-wrap a:focus {
+  box-shadow: 0 0 0 4px #facc15;
+  outline: none;
+}
+      `}</style>
 
-      <h1 className="mb-4 font-mono text-6xl font-semibold">
-        <small aria-hidden={true}>🤖</small> error{' '}
-        <small aria-hidden={true}>🤖</small>
-      </h1>
+      <section className={`error-wrap`}>
+        <header>
+          <TemplateLogo
+            style={{ cursor: 'pointer' }}
+            height={200}
+            width={200}
+            onClick={reloadApp}
+          />
+        </header>
 
-      <p className="mb-4 text-lg text-opacity-80">{message}</p>
+        <h1>
+          <small aria-hidden={true}>🤖</small> error{' '}
+          <small aria-hidden={true}>🤖</small>
+        </h1>
 
-      <p className="mt-4">
-        Let&apos;s get you back{' '}
-        <Link
-          className="mb-2 me-2 rounded-lg bg-gradient-to-r from-yellow-900 via-yellow-800 to-yellow-700 px-2 py-1.5 text-center text-sm font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-800"
-          to="/"
-        >
-          home
-        </Link>
-      </p>
-    </section>
+        <p>{message}</p>
+
+        <p>
+          Let&apos;s get you back <a href="/">home</a>
+        </p>
+      </section>
+    </>
   );
 }

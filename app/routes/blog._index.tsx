@@ -49,7 +49,6 @@ export const meta: MetaFunction = ({ data }: FixMeLater) => {
 
 export default function Index() {
   const loaderData = useLoaderData<LoaderData>();
-  throw new Error('This is a test error from BrokenComponent');
 
   return <BlogListing className={'pb-6'} {...loaderData} />;
 }
