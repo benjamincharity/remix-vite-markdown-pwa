@@ -1,10 +1,10 @@
 import { PurpleCTA } from '~/features/Marketing/components/PurpleCTA';
 
 const scores = [
-  { name: 'Performance', score: 98 },
   { name: 'Accessibility', score: 100 },
-  { name: 'Best Practices', score: 100 },
   { name: 'SEO', score: 100 },
+  { name: 'Performance', score: 98 },
+  { name: 'Best Practices', score: 100 },
 ];
 
 export function Lighthouse() {
@@ -16,7 +16,7 @@ export function Lighthouse() {
       <div className="relative grid grid-cols-2 items-center gap-8 md:grid-cols-4">
         {scores.map(({ name, score }) => {
           return (
-            <div className="">
+            <div key={name}>
               <h3 className="mb-2 whitespace-nowrap font-mono text-sm font-semibold uppercase text-opacity-70 md:text-base">
                 {name}
               </h3>
@@ -29,7 +29,7 @@ export function Lighthouse() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <circle
-                    className="stroke-current text-white text-opacity-80"
+                    className="stroke-current text-white text-opacity-20"
                     cx="18"
                     cy="18"
                     fill="none"
@@ -38,7 +38,7 @@ export function Lighthouse() {
                   />
                   <g className="origin-center -rotate-90 transform">
                     <circle
-                      className="stroke-current text-green-600 dark:text-green-500"
+                      className="stroke-current text-emerald-400"
                       cx="18"
                       cy="18"
                       fill="none"
