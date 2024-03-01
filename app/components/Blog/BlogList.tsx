@@ -105,7 +105,7 @@ function TagsDisplay({ tags, ...divProps }: TagsDisplayProps) {
 
   return (
     <div
-      className={`font-code mb-1 flex flex-wrap gap-x-4 gap-y-1 text-xs tracking-wide opacity-60 ${className}`}
+      className={`mb-1 flex flex-wrap gap-x-4 gap-y-1 font-code text-xs tracking-wide opacity-60 ${className}`}
       {...rest}
     >
       {tags.map((tag) => (

@@ -70,7 +70,7 @@ export default function Tag() {
         <h1
           id="tagged-posts-header"
           className={
-            'font-sourceSerif4 mb-4 text-center text-sm italic text-gray-600 dark:text-gray-400'
+            'mb-4 text-center font-sourceSerif4 text-sm italic text-gray-600 dark:text-gray-400'
           }
         >
           Showing <strong>{posts?.length ?? 0}</strong>{' '}

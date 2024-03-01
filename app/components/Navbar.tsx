@@ -42,7 +42,7 @@ export function Navbar({ children }: { children?: React.ReactNode }) {
             />
           </Link>
 
-          <div className="animate-gradient ml-4 block bg-gradient-to-r from-yellow-500 via-teal-500 to-purple-500 bg-clip-text font-black text-transparent">
+          <div className="ml-4 block animate-gradient bg-gradient-to-r from-yellow-500 via-teal-500 to-purple-500 bg-clip-text font-black text-transparent">
             remix-vite-markdown-pwa
           </div>
         </div>

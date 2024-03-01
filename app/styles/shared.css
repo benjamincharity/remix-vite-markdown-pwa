@@ -49,7 +49,7 @@
   }
 
   html {
-    @apply font-sourceSerif4 bg-white transition-colors duration-200;
+    @apply bg-white font-sourceSerif4 transition-colors duration-200;
   }
   html.dark {
     @apply bg-gray-900;
@@ -389,7 +389,7 @@
     @apply text-gray-700 dark:text-gray-200;
   }
   .blog-post img {
-    @apply font-sourceSerif4 inline-block aspect-video w-full max-w-full bg-gradient-to-r from-indigo-200 to-yellow-100 text-center text-xs italic leading-loose text-gray-600 outline-gray-300;
+    @apply inline-block aspect-video w-full max-w-full bg-gradient-to-r from-indigo-200 to-yellow-100 text-center font-sourceSerif4 text-xs italic leading-loose text-gray-600 outline-gray-300;
   }
   .dark .blog-post img {
     @apply from-slate-900 to-slate-700;
