@@ -24,7 +24,8 @@ export function BlogListingByTag({
   tags = [],
   ...rest
 }: BlogListingByTagProps) {
-  const { className, ...divProps } = rest;
+  const { className = '', ...divProps } = rest;
+
   return (
     <section
       aria-labelledby="tagged-posts-header"

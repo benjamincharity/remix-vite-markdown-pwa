@@ -101,7 +101,7 @@ interface TagsDisplayProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 function TagsDisplay({ tags, ...divProps }: TagsDisplayProps) {
-  const { className, ...rest } = divProps;
+  const { className = '', ...rest } = divProps;
 
   return (
     <div

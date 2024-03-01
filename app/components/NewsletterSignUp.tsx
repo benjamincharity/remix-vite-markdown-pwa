@@ -7,7 +7,7 @@ export function NewsletterSignUp({
   subheading = 'Sign up to hear about new free resources.',
   ...rest
 }: NewsletterSignUpProps) {
-  const { className, ...divProps } = rest;
+  const { className = '', ...divProps } = rest;
   return (
     <section
       id={'newsletter'}

@@ -1,7 +1,7 @@
 import { SVGProps } from 'react';
 
 export function PWAIcon(props: SVGProps<SVGSVGElement>) {
-  const { className, ...rest } = props;
+  const { className = '', ...rest } = props;
 
   return (
     <svg

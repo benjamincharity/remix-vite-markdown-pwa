@@ -3,7 +3,7 @@ import React from 'react';
 export function Footer(
   props: React.HTMLProps<HTMLDivElement> & { className?: string }
 ) {
-  const { className, ...footerProps } = props;
+  const { className = '', ...footerProps } = props;
 
   return (
     <footer
