@@ -151,3 +151,5 @@ remove it by following these steps:
 3. Remove any `tailwind` related items from `package.json` scripts.
 4. Uninstall `tailwind` items:
    `pnpm remove tailwindcss prettier-plugin-tailwindcss`.
+
+See: https://remix.run/docs/en/main/styling/tailwind

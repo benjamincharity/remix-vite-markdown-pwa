@@ -1949,6 +1949,10 @@ body  a::selection {
   max-width: 100px;
 }
 
+.max-w-\[300px\] {
+  max-width: 300px;
+}
+
 .max-w-\[60px\] {
   max-width: 60px;
 }

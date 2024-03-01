@@ -1,35 +1,25 @@
-import { useLottie } from 'lottie-react';
-import { useEffect } from 'react';
-
-import * as HeroAnimation from '~/data/animations/HeroAnimation.json';
-
 import { LargeCTALink } from '~/components/LargeCTALink';
 import { DownloadIcon } from '~/components/icons/Download';
 import { GitHubIcon } from '~/components/icons/GitHub';
 import { useTheme } from '~/utils/theme.provider';
 
-const SPEED = 0.7;
-const HEIGHT = 300;
-
 export function Hero() {
   const [theme] = useTheme();
-  const options = {
-    animationData: HeroAnimation,
-    loop: true,
-    autoplay: true,
-  };
-
-  const { View: HeroAnimationDom, setSpeed } = useLottie(options, {
-    height: HEIGHT,
-  });
-
-  useEffect(() => {
-    setSpeed(SPEED);
-  }, [setSpeed]);
 
   return (
     <main className="grid place-items-center pb-8 pt-16 md:grid-cols-2 md:pb-24 md:pt-12">
-      <div className="hidden py-6 md:order-1 md:block">{HeroAnimationDom}</div>
+      <div className="hidden py-6 md:order-1 md:block">
+        <video
+          autoPlay
+          className={'aspect-video max-w-[300px]'}
+          loop
+          muted
+          playsInline
+        >
+          <source src="images/layout.webm" type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
 
       <div className={'max-w-full'}>
         <h1 className="text-5xl font-bold lg:text-6xl lg:tracking-tight xl:text-7xl xl:tracking-tighter">
