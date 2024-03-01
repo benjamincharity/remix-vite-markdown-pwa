@@ -48,7 +48,7 @@ export function NewsletterSignUp({
                 type="email"
               />
               <button
-                className={`animate-gradient grid justify-center rounded-lg bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 px-5 py-4 text-center text-sm font-medium text-white focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-800`}
+                className={`grid animate-gradient justify-center rounded-lg bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 px-5 py-4 text-center text-sm font-medium text-white focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-800`}
                 type="submit"
               >
                 <span className={'flex gap-2'}>

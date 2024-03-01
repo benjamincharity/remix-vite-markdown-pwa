@@ -1,18 +1,13 @@
 import { type MetaFunction, json } from '@remix-run/node';
-import { useLoaderData, useSearchParams } from '@remix-run/react';
-import { useMemo } from 'react';
+import { useLoaderData } from '@remix-run/react';
 
 import { TagsPayload } from '~/types/blog';
 import { FixMeLater } from '~/types/shame';
 
-import { RoutePaths } from '~/data/routes.data';
 import { siteMetadata } from '~/data/siteMetadata';
 
-import { Badge } from '~/components/Badge';
-import { BlogList } from '~/components/Blog/BlogList';
-import { BrowseByTags } from '~/components/BrowseByTags';
 import { SITE_CONFIG } from '~/config';
-import { PaginationEnd } from '~/features/Blog/components/PaginationEnd';
+import { BlogListing } from '~/features/Blog/BlogListing';
 import {
   BlogReference,
   getAllTags,
@@ -53,35 +48,8 @@ export const meta: MetaFunction = ({ data }: FixMeLater) => {
 };
 
 export default function Index() {
-  const { articles, tags, page } = useLoaderData<LoaderData>();
-  const [searchParams] = useSearchParams();
-  const query = useMemo(() => searchParams.get('q'), [searchParams]);
-  const hasNextPage = articles.length >= SITE_CONFIG.paginationPerPage * page;
-  const nextPageLink = `${RoutePaths.blog}?page=${page + 1}`;
+  const loaderData = useLoaderData<LoaderData>();
+  throw new Error('This is a test error from BrokenComponent');
 
-  return (
-    <section className={'pb-6'}>
-      <BlogList posts={articles} />
-
-      <div className={'text-small mb-6 px-4 py-4 text-center'}>
-        {hasNextPage ? (
-          <Badge
-            color={'#f184a8'}
-            count={-1}
-            linkTo={nextPageLink}
-            tag={'Load More'}
-          />
-        ) : (
-          <PaginationEnd />
-        )}
-      </div>
-
-      <BrowseByTags
-        currentTag={query ?? ''}
-        heading={'Browse by tags:'}
-        id="tags-section"
-        tags={tags}
-      />
-    </section>
-  );
+  return <BlogListing className={'pb-6'} {...loaderData} />;
 }

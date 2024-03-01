@@ -1,17 +1,11 @@
 import { LoaderFunction, MetaFunction, json } from '@remix-run/node';
-import { Outlet, useLoaderData } from '@remix-run/react';
+import { useLoaderData } from '@remix-run/react';
 
 import { TagsPayload } from '~/types/blog';
 
-import { colors } from '~/data/colors.data';
-import { RoutePaths } from '~/data/routes.data';
 import { siteMetadata } from '~/data/siteMetadata';
 
-import { BackToLink } from '~/components/BackToLink';
-import { BackToTop } from '~/components/BackToTop';
-import { Badge } from '~/components/Badge';
-import { Footer } from '~/components/Footer';
-import { PrimaryTitle } from '~/components/PrimaryTitle';
+import { BlogTagsPage } from '~/features/Blog/BlogTagsPage';
 import { getAllBlogPosts } from '~/utils/blog.server';
 import { generateMetaCollection } from '~/utils/generateMetaCollection';
 import { getTagsFromBlogPosts } from '~/utils/getTagsFromBlogPosts';
@@ -22,10 +16,7 @@ interface LoaderData {
 
 export const loader: LoaderFunction = async () => {
   const posts = await getAllBlogPosts();
-
-  return json({
-    tags: getTagsFromBlogPosts(posts),
-  });
+  return json({ tags: getTagsFromBlogPosts(posts) });
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
@@ -45,32 +36,5 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 export default function Tags() {
   const { tags } = useLoaderData<LoaderData>();
 
-  return (
-    <main className="prose-wrapper">
-      <PrimaryTitle title={'Tags'} className={'text-center'} />
-      <BackToLink to={RoutePaths.blog} />
-
-      <nav
-        aria-label="Article tags"
-        className="flex flex-wrap justify-center gap-8 pt-10 text-base"
-      >
-        {tags.map(([tag, count], i) => {
-          return (
-            <Badge
-              color={colors[i]}
-              count={count}
-              key={tag}
-              linkTo={tag}
-              tag={tag}
-            />
-          );
-        })}
-      </nav>
-      <BackToTop wrapperProps={{ className: 'mt-8' }} />
-
-      <Outlet />
-
-      <Footer />
-    </main>
-  );
+  return <BlogTagsPage tags={tags} />;
 }

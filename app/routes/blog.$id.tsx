@@ -1,8 +1,7 @@
 import { MetaFunction } from '@remix-run/node';
-import { useLoaderData, useLocation } from '@remix-run/react';
+import { useLoaderData } from '@remix-run/react';
 import type { LoaderFunction } from '@remix-run/server-runtime';
 import { json, redirect } from '@remix-run/server-runtime';
-import { useEffect } from 'react';
 import { ExternalScriptsHandle } from 'remix-utils/external-scripts';
 
 import { TagsPayload } from '~/types/blog';
@@ -11,12 +10,7 @@ import { FixMeLater } from '~/types/shame';
 import { RoutePaths } from '~/data/routes.data';
 import { siteMetadata } from '~/data/siteMetadata';
 
-import { BackToLink } from '~/components/BackToLink';
-import { BrowseByTags } from '~/components/BrowseByTags';
-import { Footer } from '~/components/Footer';
-import { NewsletterSignUp } from '~/components/NewsletterSignUp';
-import { PrimaryTitle } from '~/components/PrimaryTitle';
-import { PublishDate } from '~/components/PublishDate';
+import { BlogPost } from '~/features/Blog/BlogPost';
 import { Frontmatter, getAllBlogPosts, getBlogPost } from '~/utils/blog.server';
 import { generateMetaCollection } from '~/utils/generateMetaCollection';
 import { getTagsFromBlogPosts } from '~/utils/getTagsFromBlogPosts';
@@ -98,58 +92,7 @@ export const meta: MetaFunction = ({ data }: FixMeLater) => {
   });
 };
 
-function getTagsWithCount(tags: string[], allTags: TagsPayload): TagsPayload {
-  return allTags.filter(([tag]) => tags.includes(tag));
-}
-
 export default function Article() {
   const { frontmatter, allTags, html } = useLoaderData<LoaderData>();
-  const localTags = getTagsWithCount(frontmatter.tags, allTags);
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.hash) {
-      const el = document.querySelector(location.hash);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, [location]);
-
-  return (
-    <main
-      className={
-        'mx-auto max-w-3xl px-4 py-4 pb-12 pt-6 sm:px-6 lg:px-8 lg:pt-10'
-      }
-    >
-      <BackToLink id={'top'} className={'mb-4'} />
-
-      {/*<FullBlogArticle />*/}
-      <article className={'blog-post'}>
-        <PublishDate
-          publishDate={frontmatter.publishDate}
-          updatedDate={frontmatter.updatedDate}
-        />
-        <PrimaryTitle title={frontmatter.title} />
-
-        <p className={'reading-time'}>
-          Reading time: {frontmatter.readingTime}min
-        </p>
-
-        <section className={'rendered-markdown'}>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-        </section>
-      </article>
-
-      <hr className={'fancy'} />
-
-      <NewsletterSignUp />
-
-      <hr className={'fancy'} />
-
-      <BrowseByTags heading={'Tags:'} tags={localTags} />
-
-      <Footer />
-    </main>
-  );
+  return <BlogPost frontmatter={frontmatter} html={html} allTags={allTags} />;
 }

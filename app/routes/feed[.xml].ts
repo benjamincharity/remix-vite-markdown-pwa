@@ -1,15 +1,7 @@
 import { siteMetadata } from '~/data/siteMetadata';
 
 import { getAllBlogPosts } from '~/utils/blog.server';
-
-function escapeXml(unsafeString: string): string {
-  return unsafeString
-    .replace(/&/g, '&amp;') // Replace & with &amp;
-    .replace(/</g, '&lt;') // Replace < with &lt;
-    .replace(/>/g, '&gt;') // Replace > with &gt;
-    .replace(/"/g, '&quot;') // Replace " with &quot;
-    .replace(/'/g, '&apos;'); // Replace ' with &apos;
-}
+import { escapeXml } from '~/utils/escapeXml';
 
 export async function loader() {
   const posts = await getAllBlogPosts();
@@ -44,9 +36,7 @@ export async function loader() {
   </rss>`;
 
   return new Response(feed, {
+    headers: { 'Content-Type': 'application/xml' },
     status: 200,
-    headers: {
-      'Content-Type': 'application/xml',
-    },
   });
 }

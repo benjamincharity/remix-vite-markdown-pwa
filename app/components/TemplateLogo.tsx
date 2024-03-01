@@ -1,12 +1,13 @@
 import React from 'react';
 
 interface TemplateLogoProps extends React.SVGProps<SVGSVGElement> {
-  color: string;
+  color?: string;
 }
 
-export function TemplateLogo(props: TemplateLogoProps) {
-  const { color, ...svgProps } = props;
-
+export function TemplateLogo({
+  color = '#000',
+  ...svgProps
+}: TemplateLogoProps) {
   return (
     <svg
       fill="none"
