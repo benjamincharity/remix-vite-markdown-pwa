@@ -2,6 +2,12 @@
 
 ![Vercel Deploy](https://therealsujitk-vercel-badge.vercel.app/?app=remix-vite-markdown-pwa)
 
+![Lighthouse Accessibility Badge](public/images/lighthouse/lighthouse_accessibility.svg)
+![Lighthouse Best Practices Badge](public/images/lighthouse/lighthouse_best-practices.svg)
+![Lighthouse Performance Badge](public/images/lighthouse/lighthouse_performance.svg)
+![Lighthouse PWA Badge](public/images/lighthouse/lighthouse_pwa.svg)
+![Lighthouse SEO Badge](public/images/lighthouse/lighthouse_seo.svg)
+
 ![remix-vite-markdown-pwa](public/images/social.LinkedIn.png)
 
 Welcome to Remix Vite Markdown PWA, a feature-rich template designed to
