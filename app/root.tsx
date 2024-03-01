@@ -16,10 +16,7 @@ import { SpeedInsights } from '@vercel/speed-insights/remix';
 import React, { useEffect } from 'react';
 import { ExternalScripts } from 'remix-utils/external-scripts';
 
-import { siteMetadata } from '~/data/siteMetadata';
-
-import { Header } from '~/components/Header';
-import { ModernButton } from '~/components/ModernButton';
+import { ErrorPage } from '~/components/ErrorPage';
 import { SITE_CONFIG } from '~/config';
 import { BlogReference, getLatestBlogPosts } from '~/utils/blog.server';
 import { generateMetaCollection } from '~/utils/generateMetaCollection';
@@ -145,34 +142,23 @@ export function ErrorBoundary() {
   const error = useRouteError();
 
   return (
-    <html lang="en" className={'min-h-full min-w-full'}>
+    <html lang="en" className={'h-full w-full'}>
       <head>
         <title>Error</title>
         <Meta />
         <Links />
+        <script src="https://cdn.tailwindcss.com"></script>
       </head>
-      <body>
-        <Header />
-        <main className="text-center">
-          <h2 className={'mb-10 text-5xl text-white'}>error</h2>
-          <p className={'quote mb-10 text-xl'}>
-            {isRouteErrorResponse(error)
+      <body className={'h-full w-full'}>
+        <ErrorPage
+          message={
+            isRouteErrorResponse(error)
               ? `${error.status} ${error.statusText}`
               : error instanceof Error
                 ? error.message
-                : 'Unknown Error'}
-          </p>
-
-          <div>
-            <ModernButton
-              onClick={() => {
-                window.location.href = siteMetadata.url;
-              }}
-            >
-              Reload
-            </ModernButton>
-          </div>
-        </main>
+                : 'Unknown Error'
+          }
+        />
         <Scripts />
         <ExternalScripts />
       </body>
