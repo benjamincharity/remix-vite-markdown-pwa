@@ -14,7 +14,7 @@ export function Hero() {
       <div className="hidden py-6 md:order-1 md:block">
         <video
           autoPlay={!reduceMotion}
-          className={'aspect-video max-w-[300px]'}
+          className={'aspect-video max-w-full'}
           loop
           muted
           playsInline
