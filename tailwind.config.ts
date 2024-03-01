@@ -16,6 +16,8 @@ export default {
       animation: {
         gradient: 'gradient 5s ease infinite',
         gentleRotate: 'gentleRotate 4s ease-in-out infinite',
+        gauge_fadeIn: 'gauge_fadeIn 1s ease forwards',
+        gauge_fill: 'gauge_fill 1s ease forwards',
       },
       colors: {
         mark: 'rgb(221,217,121)',
@@ -35,6 +37,14 @@ export default {
         gentleRotate: {
           '0%, 100%': { transform: 'rotate(-2deg)' },
           '50%': { transform: 'rotate(2deg)' },
+        },
+        gauge_fadeIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        gauge_fill: {
+          from: { 'stroke-dashoffset': '332', opacity: '0' },
+          to: { opacity: '1' },
         },
       },
       fontFamily: {

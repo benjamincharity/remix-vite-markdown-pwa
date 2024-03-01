@@ -140,6 +140,10 @@
   .highlight code {
     @apply bg-yellow-500 bg-opacity-50;
   }
+
+  .animated-gradient-text {
+    @apply animate-gradient bg-gradient-to-r from-yellow-500 via-teal-500 to-purple-500 bg-clip-text font-black text-transparent;
+  }
 }
 
 @layer components {

@@ -24,7 +24,7 @@ export function Navbar({ children }: { children?: React.ReactNode }) {
   const isHomePage = useMatch({ path: '/' });
 
   return (
-    <header className="mx-auto my-5 flex max-w-screen-xl flex-row items-center justify-between px-5">
+    <header className="mx-auto my-5 mb-12 flex max-w-screen-xl flex-row items-center justify-between px-5">
       <div className="flex w-full flex-col items-center justify-between md:flex-row">
         <div className={'flex items-center'}>
           <Link
@@ -42,7 +42,7 @@ export function Navbar({ children }: { children?: React.ReactNode }) {
             />
           </Link>
 
-          <div className="ml-4 block animate-gradient bg-gradient-to-r from-yellow-500 via-teal-500 to-purple-500 bg-clip-text font-black text-transparent">
+          <div className="animated-gradient-text ml-4 block animate-none font-sans font-bold">
             remix-vite-markdown-pwa
           </div>
         </div>

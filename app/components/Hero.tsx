@@ -10,7 +10,7 @@ export function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <main className="grid place-items-center pb-8 pt-16 md:grid-cols-2 md:pb-24 md:pt-12">
+    <main className="grid place-items-center md:grid-cols-2">
       <div className="hidden py-6 md:order-1 md:block">
         <video
           autoPlay={!reduceMotion}
