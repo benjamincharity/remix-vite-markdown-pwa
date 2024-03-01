@@ -48,7 +48,7 @@ export function NewsletterSignUp({
                 type="email"
               />
               <button
-                className={`grid animate-gradient justify-center rounded-lg bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 px-5 py-4 text-center text-sm font-medium text-white focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-800`}
+                className={`animate-gradient grid justify-center rounded-lg bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 px-5 py-4 text-center text-sm font-medium text-white focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-800`}
                 type="submit"
               >
                 <span className={'flex gap-2'}>
@@ -63,7 +63,7 @@ export function NewsletterSignUp({
                 </span>
               </button>
             </form>
-            <p className="py-2 text-center text-xs text-gray-400">
+            <p className="py-2 text-center text-xs text-slate-500 dark:text-slate-300">
               No data sharing. Unsubscribe at any time.
             </p>
           </div>

@@ -26,11 +26,6 @@ export const loader = async () => {
       ],
       icons: [
         {
-          src: '/images/pwa/apple-icon-180.png',
-          sizes: '180x180',
-          type: 'image/png',
-        },
-        {
           src: '/images/pwa/maskable_icon_x192.png',
           sizes: '192x192',
           type: 'image/png',
