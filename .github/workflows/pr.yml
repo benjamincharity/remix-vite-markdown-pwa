@@ -1,0 +1,33 @@
+name: 'PR Actions'
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: 'PR Actions'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Skip Duplicate Actions
+        uses: fkirc/skip-duplicate-actions@v5.3.1
+
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.10.5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: 'Lint'
+        run: pnpm lint --quiet
+
+      - name: 'Build'
+        run: pnpm build

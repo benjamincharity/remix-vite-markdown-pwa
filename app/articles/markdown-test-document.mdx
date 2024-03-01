@@ -1,0 +1,244 @@
+---
+title: 'Markdown Test Document'
+summary: 'Creating a comprehensive Markdown page that includes all possible GitHub
+Markdown elements can serve as an invaluable resource for documentation, project
+READMEs, and more.'
+tags:
+  - angular
+  - javascript
+  - remix
+  - markdown
+  - github
+  - documentation
+  - readme
+publishDate: 2024-01-01T00:00:00.000Z
+readingTime: 23
+images: ['template-customization.webp']
+---
+
+Creating a comprehensive Markdown page that includes all possible GitHub
+Markdown elements can serve as an invaluable resource for documentation, project
+READMEs, and more. Below is an example of such a Markdown page, showcasing a
+wide array of elements such as headings, emphasis, lists, links, images, code
+blocks, tables, blockquotes, and more.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Text](#text)
+  - [Headings](#headings)
+  - [Emphasis](#emphasis)
+- [Lists](#lists)
+- [Links](#links)
+- [Images](#images)
+- [Code](#code)
+- [Tables](#tables)
+- [Blockquotes](#blockquotes)
+- [Horizontal Rules](#horizontal-rules)
+- [Task Lists](#task-lists)
+- [Mentioning Users and Teams](#mentioning-users-and-teams)
+- [Content References](#content-references)
+- [Using Emojis](#using-emojis)
+- [Collapsible Sections](#collapsible-sections)
+
+## Introduction
+
+Welcome to the project! This document demonstrates various GitHub Markdown
+elements to help you create rich documents.
+
+## Text
+
+### Headings
+
+Use `#` for a level 1 heading, `##` for level 2, and so on up to `######` for
+level 6.
+
+### Emphasis
+
+- **Bold** with `**` or `__`.
+- _Italic_ with `*` or `_`.
+- ~~Strikethrough~~ with `~~`.
+
+### Callout
+
+Here is a paragraph with a <strong>callout marker</strong> in the middle.
+
+### Colors
+
+Don't forget to check colors like `#bada55` and `#c0ffee`!
+
+## Lists
+
+### Ordered List
+
+1. First item
+2. Second item
+3. Third item
+
+### Unordered List
+
+- Item
+- Another item
+- Yet another item
+
+## Links
+
+- External: [GitHub](http://github.com)
+- Internal: [Home](/)
+
+## Images
+
+![An alt description for this image.](template-customization.webp)
+
+## Code
+
+### Inline Code
+
+Use single backticks: `var example = true;`
+
+This is an array `[1, 2, 3]{:js}` of numbers 1 through 3.
+
+### Code Block
+
+```javascript title="Basic syntax highlighting"
+function test() {
+  console.log('Standard output');
+}
+```
+
+### Line Highlighting
+
+```js {2} title="Highlight single line"
+function test() {
+  console.log('notice I am highlighted?');
+}
+```
+
+```js {2,3} title="Highlight multiple lines"
+function test() {
+  console.log('notice I am highlighted?');
+  console.log('and, so am I!');
+}
+```
+
+```js {2,4-7} title="Highlight range"
+function test() {
+  console.log('one');
+  console.log('two');
+  console.log('three');
+  console.log('four');
+  console.log('five');
+  console.log('six');
+}
+```
+
+### Highlight word
+
+```js "test" title="Highlight word"
+function test() {
+  console.log('notice that test is highlighted?');
+}
+```
+
+```ts title="Highlight word by comment"
+// [!code word:options:2]
+const options = { foo: 'bar' };
+options.foo = 'baz';
+console.log(options.foo); // this one will not be highlighted
+```
+
+### Highlight by IDs
+
+```js /age/#a /name/#a /email/#a /setAge/#b /setName/#c /50/#d /'Taylor'/#e /setEmail/#f /example.com/#g title="Highlight multiple by ID"
+const [age, setAge] = useState(50);
+const [name, setName] = useState('Taylor');
+const [email, setEmail] = useState('taylor@example.com');
+```
+
+```ts /ab/#a title="Highlight by ID"
+const ab = 12;
+const abcd = 1234;
+```
+
+### Diff
+
+```ts
+export function foo() {
+  console.log('hewwo'); // [!code --]
+  console.log('hello'); // [!code ++]
+}
+```
+
+```ts
+export function foo() {
+  -console.log('hewwo');
+  +console.log('hello');
+}
+```
+
+### Title & caption
+
+```js title="My title!"
+// Code
+```
+
+```js caption="My caption!"
+// Code
+```
+
+## Tables
+
+| Syntax    | Description | Left-aligned | Center-aligned | Right-aligned |
+| --------- | ----------- | :----------- | :------------: | ------------: |
+| Header    | Title       | Cell 1       |     Cell 2     |        Cell 3 |
+| Paragraph | Text        | Cell 4       |     Cell 5     |        Cell 6 |
+
+## Blockquotes
+
+> Blockquotes can also be nested.
+>
+> > Like this.
+
+## Horizontal Rules
+
+Three or more...
+
+---
+
+Hyphens
+
+---
+
+Asterisks
+
+---
+
+Underscores
+
+## Task Lists
+
+- [x] Write the documentation
+- [ ] Update the website
+
+## Mentioning Users and Teams
+
+@username or @teamname will notify the person or team mentioned.
+
+## Content References
+
+#1, @user, and [other references](#) allow linking to issues, PRs, and users.
+
+## Using Emojis
+
+:smiley: Add emojis with :EMOJI_CODE:
+
+## Collapsible Sections
+
+<details>
+  <summary>Click to expand!</summary>
+  Here's more detailed information.
+</details>
+
+This Markdown page example covers the basics and some advanced elements, making
+it a good starting point for your documents on GitHub. Feel free to expand it
+with more specific sections tailored to your project's needs.

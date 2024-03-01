@@ -1,0 +1,14 @@
+/* TEAM */
+
+Design/Development: TODO
+Location: TODO
+
+
+/* THANKS */
+
+
+
+/* SITE */
+
+Last update: @@LastUpdated
+Components: RemixJS, TypeScript, Vite, Vercel, CSS, GitHub
