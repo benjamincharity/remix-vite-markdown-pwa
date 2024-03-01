@@ -20,6 +20,7 @@ import { siteMetadata } from '~/data/siteMetadata';
 
 import { Header } from '~/components/Header';
 import { ModernButton } from '~/components/ModernButton';
+import { SITE_CONFIG } from '~/config';
 import { BlogReference, getLatestBlogPosts } from '~/utils/blog.server';
 import { generateMetaCollection } from '~/utils/generateMetaCollection';
 import {
@@ -64,7 +65,7 @@ export async function loader({ request }: { request: Request }) {
       );
     }
   }
-  const latestPosts = await getLatestBlogPosts();
+  const latestPosts = await getLatestBlogPosts(SITE_CONFIG.postPreloadCount);
 
   return json({
     css: cssContent,
