@@ -10,7 +10,7 @@ import { BackToLink } from '~/components/BackToLink';
 import { BackToTop } from '~/components/BackToTop';
 import { Badge } from '~/components/Badge';
 import { Footer } from '~/components/Footer';
-import { PrimaryTitle } from '~/components/PrimaryTitle';
+import { PrimaryTitle } from '~/features/Blog/PrimaryTitle';
 
 interface BlogTagsPageProps extends React.HTMLProps<HTMLDivElement> {
   tags: TagsPayload;

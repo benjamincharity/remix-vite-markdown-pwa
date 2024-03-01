@@ -1,9 +1,9 @@
 import { Datetime } from '~/components/Datetime';
 
 interface PublishDateProps {
+  className?: string;
   publishDate: string;
   updatedDate?: string;
-  className?: string;
 }
 
 export const PublishDate = (props: PublishDateProps) => {

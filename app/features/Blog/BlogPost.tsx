@@ -7,8 +7,8 @@ import { BackToLink } from '~/components/BackToLink';
 import { BrowseByTags } from '~/components/BrowseByTags';
 import { Footer } from '~/components/Footer';
 import { NewsletterSignUp } from '~/components/NewsletterSignUp';
-import { PrimaryTitle } from '~/components/PrimaryTitle';
-import { PublishDate } from '~/components/PublishDate';
+import { PrimaryTitle } from '~/features/Blog/PrimaryTitle';
+import { PublishDate } from '~/features/Blog/PublishDate';
 import { Frontmatter } from '~/utils/blog.server';
 
 interface BlogPostProps {
@@ -38,7 +38,6 @@ export function BlogPost({ allTags = [], frontmatter, html }: BlogPostProps) {
     >
       <BackToLink id={'top'} className={'mb-4'} />
 
-      {/*<FullBlogArticle />*/}
       <article className={'blog-post'}>
         <PublishDate
           publishDate={frontmatter.publishDate}

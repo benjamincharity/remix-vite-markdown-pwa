@@ -8,7 +8,7 @@ import { Lighthouse } from '~/features/Marketing/components/Lighthouse';
 
 import { Features } from './components/Features';
 
-const Logos = React.lazy(() => import('~/components/Logos'));
+const Logos = React.lazy(() => import('~/features/Marketing/components/Logos'));
 
 export function Marketing() {
   return (
