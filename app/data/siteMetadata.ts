@@ -1,4 +1,4 @@
-export const CLOUDINARY_ACCOUNT = 'da2exoho7';
+export const CLOUDINARY_ACCOUNT = 'CHANGE_ME';
 
 export const siteMetadata = {
   title: 'remix-vite-markdown-pwa',
