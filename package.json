@@ -153,6 +153,7 @@
     "dev:worker": "remix-pwa dev",
     "e2e": "playwright test",
     "format": "npx prettier --log-level warn --write .",
+    "generate-lighthouse-badges": "npx lighthouse-badges --url 'https://remix-vite-markdown-pwa.vercel.app' -o public/images/lighthouse",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/index.js",
     "start:prod": "cross-env NODE_ENV=production remix-serve ./build/index.js",
