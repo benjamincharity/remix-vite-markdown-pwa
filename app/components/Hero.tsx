@@ -1,3 +1,5 @@
+import { useReducedMotion } from '@mantine/hooks';
+
 import { LargeCTALink } from '~/components/LargeCTALink';
 import { DownloadIcon } from '~/components/icons/Download';
 import { GitHubIcon } from '~/components/icons/GitHub';
@@ -5,12 +7,13 @@ import { useTheme } from '~/utils/theme.provider';
 
 export function Hero() {
   const [theme] = useTheme();
+  const reduceMotion = useReducedMotion();
 
   return (
     <main className="grid place-items-center pb-8 pt-16 md:grid-cols-2 md:pb-24 md:pt-12">
       <div className="hidden py-6 md:order-1 md:block">
         <video
-          autoPlay
+          autoPlay={!reduceMotion}
           className={'aspect-video max-w-[300px]'}
           loop
           muted
