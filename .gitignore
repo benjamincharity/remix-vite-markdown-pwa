@@ -22,3 +22,4 @@ node_modules
 /playwright-report/
 /playwright/.cache/
 .env*.local
+public/shared.css
