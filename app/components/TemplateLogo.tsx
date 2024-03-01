@@ -24,22 +24,29 @@ export function TemplateLogo({
       </desc>
       <style>
         {`
-          path, circle {
-            transition: fill 0.5s ease-in-out, stroke 0.5s ease-in-out;
-          }
+path, circle {
+  transition: fill 0.5s ease-in-out, stroke 0.5s ease-in-out;
+}
+@keyframes rotate {
+   from {
+       transform: rotate(0deg);
+   }
+   to {
+       transform: rotate(360deg);
+   }
+ }
+ svg {
+   --animation-duration: 26s;
+ }
+ svg:hover {
+   --animation-duration: 3s;
+ }
+ svg #center-mark {
+   animation: rotate var(--animation-duration) linear infinite;
+   transform-origin: center;
+ }
         `}
       </style>
-      <animateTransform
-        additive="sum"
-        attributeName="transform"
-        attributeType="xml"
-        dur="26s"
-        from="360"
-        repeatCount="indefinite"
-        to="0"
-        type="rotate"
-        xlinkHref="#center-mark"
-      />
       <circle
         cx="420"
         cy="420"
