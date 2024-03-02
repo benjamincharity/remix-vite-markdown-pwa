@@ -40,10 +40,20 @@ export const handleDataRequest: HandleDataRequestFunction = async (
     request.headers.get('Sec-Fetch-Purpose') ||
     request.headers.get('Moz-Purpose');
   const isPrefetch = purpose === 'prefetch';
+  const url = new URL(request.url);
+  const isFont =
+    url.pathname.endsWith('.woff') ||
+    url.pathname.endsWith('.woff2') ||
+    url.pathname.endsWith('.ttf');
 
-  // If it's a GET request, and it's a prefetch request, and it doesn't have a Cache-Control header
-  if (isGet && isPrefetch && !response.headers.has('Cache-Control')) {
-    // we will cache for 10 seconds only on the browser
+  if (isGet && isFont) {
+    // NOTE: Set cache for 1 year for font files, which is a common practice
+    response.headers.set(
+      'Cache-Control',
+      'public, max-age=31536000, immutable'
+    );
+  } else if (isGet && isPrefetch && !response.headers.has('Cache-Control')) {
+    // For other prefetch requests, cache for 10 seconds only on the browser
     response.headers.set('Cache-Control', 'private, max-age=10');
   }
 
