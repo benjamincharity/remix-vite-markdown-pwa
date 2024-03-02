@@ -11,7 +11,7 @@ export function Hero() {
 
   return (
     <main className="grid place-items-center md:grid-cols-2">
-      <div className="hidden py-6 md:order-1 md:block">
+      <div className="hidden py-6 opacity-80 md:order-1 md:block">
         <video
           autoPlay={!reduceMotion}
           className={'aspect-video max-w-full'}
