@@ -1,5 +1,5 @@
 import { LiveReload, useSWEffect } from '@remix-pwa/sw';
-import { MetaFunction, json } from '@remix-run/node';
+import { LinksFunction, MetaFunction, json } from '@remix-run/node';
 import {
   Links,
   Meta,
@@ -30,13 +30,22 @@ import {
 import { getThemeSession } from '~/utils/theme.server';
 
 import { Layout } from './Layouts/Layout';
+import stylesheet from './styles/shared.css';
 
-// NOTE: Uncomment for faster dev builds
-// import styles from './styles/shared.css';
+const isProd = process.env.NODE_ENV === 'production';
+
 // NOTE: This is a great place to add any preload/prefetch links.
-// export const links: LinksFunction = () => {
-//   return [{ rel: 'stylesheet', href: styles }];
-// };
+export const links: LinksFunction = () => {
+  const links = [];
+
+  // NOTE: To increase development speed, we only inject the css directly when in production.
+  // So we need to include the css file here for development.
+  if (!isProd) {
+    links.push({ rel: 'stylesheet', href: stylesheet });
+  }
+
+  return links;
+};
 
 interface LoaderData {
   css: string;
@@ -92,7 +101,7 @@ const App = React.memo(() => {
     <html className={`min-h-full min-w-full ${theme}`} lang="en">
       <head>
         <Meta />
-        <style dangerouslySetInnerHTML={{ __html: css }} />
+        <style dangerouslySetInnerHTML={{ __html: isProd ? css : '' }} />
         <link rel="manifest" href="/manifest.webmanifest" />
         <Links />
         <ThemeHead ssrTheme={Boolean(loaderTheme)} />
