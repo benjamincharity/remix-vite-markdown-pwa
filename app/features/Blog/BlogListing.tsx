@@ -1,14 +1,14 @@
 import { useSearchParams } from '@remix-run/react';
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { TagsPayload } from '~/types/blog';
 
 import { RoutePaths } from '~/data/routes.data';
 
 import { Badge } from '~/components/Badge';
-import { BlogList } from '~/components/Blog/BlogList';
 import { BrowseByTags } from '~/components/BrowseByTags';
 import { SITE_CONFIG } from '~/config';
+import { BlogList } from '~/features/Blog/BlogList';
 import { PaginationEnd } from '~/features/Blog/PaginationEnd';
 import { BlogReference } from '~/utils/blog.server';
 

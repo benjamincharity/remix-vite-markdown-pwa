@@ -7,9 +7,9 @@ import { RoutePaths } from '~/data/routes.data';
 
 import { BackToLink } from '~/components/BackToLink';
 import { BackToTop } from '~/components/BackToTop';
-import { BlogList } from '~/components/Blog/BlogList';
 import { BrowseByTags } from '~/components/BrowseByTags';
 import { Footer } from '~/components/Footer';
+import { BlogList } from '~/features/Blog/BlogList';
 import { BlogReference } from '~/utils/blog.server';
 
 interface BlogListingByTagProps extends React.HTMLProps<HTMLDivElement> {
