@@ -166,7 +166,7 @@ dependencies:
     version: 1.0.3
   remix-utils:
     specifier: 7.5.0
-    version: 7.5.0(@remix-run/node@2.7.2)(@remix-run/react@2.7.2)(react@18.2.0)
+    version: 7.5.0(@remix-run/node@2.7.2)(@remix-run/react@2.7.2)(react@18.2.0)(zod@3.22.4)
   shikiji:
     specifier: 0.10.2
     version: 0.10.2
@@ -185,6 +185,9 @@ dependencies:
   unist-util-visit:
     specifier: 5.0.0
     version: 5.0.0
+  zod:
+    specifier: 3.22.4
+    version: 3.22.4
 
 devDependencies:
   '@babel/core':
@@ -11240,7 +11243,7 @@ packages:
       - wrangler
     dev: true
 
-  /remix-utils@7.5.0(@remix-run/node@2.7.2)(@remix-run/react@2.7.2)(react@18.2.0):
+  /remix-utils@7.5.0(@remix-run/node@2.7.2)(@remix-run/react@2.7.2)(react@18.2.0)(zod@3.22.4):
     resolution: {integrity: sha512-vzjDhbdwK+3XxqL2LM7ZPzq0zyjb+77eAWbKhDqhnh0nlA11n3CmTtYzrZYpVf6h24+6m5mD6KnRfcdD3Zrl7w==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -11280,6 +11283,7 @@ packages:
       '@remix-run/react': 2.7.2(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.6)
       react: 18.2.0
       type-fest: 4.10.3
+      zod: 3.22.4
     dev: false
 
   /require-directory@2.1.1:
@@ -13197,6 +13201,10 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: false
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
