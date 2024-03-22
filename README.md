@@ -24,79 +24,79 @@ of the key features and functionalities offered by this template:
 
 ## Key Features
 
-### Dynamically Built Posts and Tags List
+### 🔄 Dynamically Built Posts and Tags List
 
 Say goodbye to manual management of your posts and tags list. Our template
 dynamically generates these lists, saving you time and effort.
 
-### Load More Pagination
+### ⬇️ Load More Pagination
 
 Choose between infinite scroll or click-to-load-more pagination options to
 enhance user experience and navigation on your site.
 
-### Progressive Web App (PWA) Support
+### 📱 Progressive Web App (PWA) Support
 
 Transform your website into a PWA, allowing users to enjoy a native app-like
 experience, including offline access and push notifications.
 
-### Perfect Lighthouse Score
+### 🏆 Perfect Lighthouse Score
 
 Achieve a flawless Lighthouse score across all categories, ensuring optimal
 performance, accessibility, best practices, and SEO.
 
-### CSS Injected to Initial Payload
+### ⚡ CSS Injected to Initial Payload
 
 Optimize loading times by injecting CSS into the initial payload, enhancing the
 rendering speed of your website.
 
-### Preload Most Recent Articles
+### ⏩ Preload Most Recent Articles
 
 Improve user experience by preloading the most recent articles, reducing latency
 and ensuring swift access to content.
 
-### Reduced Motion Mode Support
+### 🛑 Reduced Motion Mode Support
 
 Cater to users with motion sensitivity by providing support for reduced motion
 mode, enhancing accessibility and inclusivity.
 
-### Full Control Over Markdown Compilation Pipeline
+### 🛠️ Full Control Over Markdown Compilation Pipeline
 
 Enjoy complete control over your markdown compilation pipeline using unified and
 re-hype, allowing for semantic table output, responsive image rendering, code
 highlighting, GitHub flavor support, Codepen embeds, deep linking, reading time
 calculation, and more.
 
-### Tailwind CSS Integration
+### 🎨 Tailwind CSS Integration
 
 Integrate Tailwind CSS seamlessly into your project, though you may encounter a
 recompilation issue in development mode. Detailed instructions are provided to
 address this concern, and removing Tailwind CSS is made easy if needed.
 
-### Bulletproof Color Mode Support
+### 🌈 Bulletproof Color Mode Support
 
 Offer users a customizable color mode preference, with settings stored locally
 via cookies, ensuring a personalized browsing experience.
 
-### RSS Feed and Sitemap Support
+### 📡 RSS Feed and Sitemap Support
 
 Enhance discoverability and SEO by providing RSS feed and sitemap support for
 your website.
 
-### Local Link Support and Full Meta-Data Support
+### 🔗 Local Link Support and Full Meta-Data Support
 
 Facilitate smooth navigation with local link support and ensure optimal sharing
 on social platforms with full meta-data support, including custom images per
 post.
 
-### Ready-to-Deploy to Vercel or Netlify
-
-Deploy your website effortlessly to Vercel or Netlify, leveraging their robust
-hosting solutions for optimal performance and scalability.
-
-### Prettier with Import Sorting
+### ✂️ Prettier with Import Sorting
 
 Maintain clean and organized code with Prettier and ESLint integration,
 including import sorting for improved readability and maintainability.
+
+### 🚀 Ready-to-Deploy to Vercel or Netlify
+
+Deploy your website effortlessly to Vercel or Netlify, leveraging their robust
+hosting solutions for optimal performance and scalability.
 
 ## Getting Started
 
